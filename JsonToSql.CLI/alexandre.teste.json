@@ -1,0 +1,26 @@
+{
+  "nome": "alexandre",
+  "data_nascimento": "21/12/2001",
+  "idade": 22,
+  "email": "teste@mail.com",
+  "profissao": {
+    "nome": "professor",
+    "horario": "integral",
+    "carga_diaria": 8
+  },
+  "cursos": [
+    {
+      "nome": "engenharia",
+      "status": "cursando",
+      "concluido": true,
+      "custo": 20000.25
+    },
+    {
+      "nome": "engenharia b",
+      "status": "concluido",
+      "concluido": true,
+      "data_conclusao": "30/11/2024",
+      "custo": 20000.25
+    }
+  ]
+}

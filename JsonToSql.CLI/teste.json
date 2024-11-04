@@ -1,0 +1,30 @@
+{
+  "nome": "Lucas Baldasso",
+  "idade": 26,
+  "conta": 150.12,
+  "cursos": [
+    {
+      "nome": "Engenharia de Software",
+      "status": "Em Andamento"
+    }
+  ],
+  "servico": {
+    "name": "programador",
+    "horas": 8,
+    "teste": []
+  },
+  "abc": {
+    "name": "programador",
+    "horas": 8,
+    "teste": []
+  },
+  "endereco": {
+    "rua": "Brigadeiro Rocha",
+    "numero": "1141",
+    "complemento": "Ap 201",
+    "bairro": "Trianon",
+    "cidade": "Guarapuava",
+    "estado": "PR"
+  },
+  "hoje": "2024-10-30T14:36:30.0289754-03:00"
+}

@@ -1,0 +1,28 @@
+{
+  "profiles": {
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    },
+    "Interativo": {
+      "commandName": "Project",
+      "commandLineArgs": "teste.json -i"
+    },
+    "Cru": {
+      "commandName": "Project",
+      "commandLineArgs": "teste.json"
+    },
+    "See Output": {
+      "commandName": "Project",
+      "commandLineArgs": "./teste.json -s -d"
+    },
+    "Verbose": {
+      "commandName": "Project",
+      "commandLineArgs": "teste.json -v"
+    },
+    "WriteFile": {
+      "commandName": "Project",
+      "commandLineArgs": "./teste.json -s -o ./out/teste.sql"
+    }
+  }
+}
