@@ -1,30 +1,23 @@
 {
-  "nome": "Lucas Baldasso",
-  "idade": 26,
-  "conta": 150.12,
-  "cursos": [
+  "cargo": "programador",
+  "data_inicio": "2020-01-01",
+  "tempo_de_casa": 25,
+  "salario": 1000.2,
+  "pessoa": {
+    "nome": "João",
+    "sobrenome": "Silva",
+    "idade": 30
+  },
+  "filho": [
     {
-      "nome": "Engenharia de Software",
-      "status": "Em Andamento"
+      "nome": "Maria",
+      "sobrenome": "Silva",
+      "idade": 25
+    },
+    {
+      "nome": "José",
+      "sobrenome": "Silva",
+      "idade": 30
     }
-  ],
-  "servico": {
-    "name": "programador",
-    "horas": 8,
-    "teste": []
-  },
-  "abc": {
-    "name": "programador",
-    "horas": 8,
-    "teste": []
-  },
-  "endereco": {
-    "rua": "Brigadeiro Rocha",
-    "numero": "1141",
-    "complemento": "Ap 201",
-    "bairro": "Trianon",
-    "cidade": "Guarapuava",
-    "estado": "PR"
-  },
-  "hoje": "2024-10-30T14:36:30.0289754-03:00"
+  ]
 }

@@ -33,7 +33,7 @@ internal class SqlIndexTranspiler(ISettingsProvider<CommonSettings> settings) : 
                     {
                         Name = $"{field.Name}_{root.Table.Name}_id",
                         ClrType = tablePk.ClrType,
-                        DatabaseType = tablePk.DatabaseType == "serial" ? "integer" : tablePk.DatabaseType,
+                        DatabaseType = tablePk.DatabaseType.Equals("serial", StringComparison.OrdinalIgnoreCase) ? "integer" : tablePk.DatabaseType,
                         IsAutoIncrement = false,
                         IsNullable = true,
                     };
@@ -50,7 +50,7 @@ internal class SqlIndexTranspiler(ISettingsProvider<CommonSettings> settings) : 
                     {
                         Name = $"{root.Table.Name}_{field.Name}_id",
                         ClrType = rootPk.ClrType,
-                        DatabaseType = tablePk.DatabaseType == "serial" ? "integer" : tablePk.DatabaseType,
+                        DatabaseType = tablePk.DatabaseType.Equals("serial", StringComparison.OrdinalIgnoreCase) ? "integer" : tablePk.DatabaseType,
                         IsAutoIncrement = false,
                         IsNullable = true,
                     };
@@ -72,7 +72,7 @@ internal class SqlIndexTranspiler(ISettingsProvider<CommonSettings> settings) : 
                         {
                             Name = $"{field.Name}_{root.Table.Name}_id",
                             ClrType = rootPk.ClrType,
-                            DatabaseType = rootPk.DatabaseType == "serial" ? "integer" : rootPk.DatabaseType,
+                            DatabaseType = rootPk.DatabaseType.Equals("serial", StringComparison.OrdinalIgnoreCase) ? "integer" : rootPk.DatabaseType,
                             IsAutoIncrement = false,
                             IsNullable = true,
                         };
@@ -94,7 +94,7 @@ internal class SqlIndexTranspiler(ISettingsProvider<CommonSettings> settings) : 
                         {
                             Name = $"{field.Name}_{table.Table.Name}_id",
                             ClrType = tpk.ClrType,
-                            DatabaseType = tpk.DatabaseType == "serial" ? "integer" : tpk.DatabaseType,
+                            DatabaseType = tpk.DatabaseType.Equals("serial", StringComparison.OrdinalIgnoreCase) ? "integer" : tpk.DatabaseType,
                             IsAutoIncrement = false,
                             IsNullable = true,
                         };
@@ -115,14 +115,14 @@ internal class SqlIndexTranspiler(ISettingsProvider<CommonSettings> settings) : 
                     {
                         Name = rootPk.Name,
                         ClrType = rootPk.ClrType,
-                        DatabaseType = tablePk.DatabaseType == "serial" ? "integer" : tablePk.DatabaseType,
+                        DatabaseType = tablePk.DatabaseType.Equals("serial", StringComparison.OrdinalIgnoreCase) ? "integer" : tablePk.DatabaseType,
                         IsNullable = false
                     };
                     var itemId = new DatabaseFieldInfo
                     {
                         Name = tablePk.Name,
                         ClrType = tablePk.ClrType,
-                        DatabaseType = tablePk.DatabaseType == "serial" ? "integer" : tablePk.DatabaseType,
+                        DatabaseType = tablePk.DatabaseType.Equals("serial", StringComparison.OrdinalIgnoreCase) ? "integer" : tablePk.DatabaseType,
                         IsNullable = false,
                     };
                     var itemToAdd = new FieldsTranslatedToTableDescription

@@ -106,7 +106,7 @@ internal class JsonTranspiler(ISqlInitialTranspiler initialTranspiler, ISqlWrite
                             }
                         }
                     }
-                    else if (item.Key == "object"
+                    else if (item.Value is JsonShortDescription ivjs && ivjs.Key == "object"
                         && element.Value is ICollection<JsonShortDescription> elVal
                         && item.Value.Value is IDictionary<string, JsonShortDescription> fevdic
                         && elVal.FirstOrDefault().Value is IDictionary<string, JsonShortDescription> fivdic)
@@ -152,10 +152,33 @@ internal class JsonTranspiler(ISqlInitialTranspiler initialTranspiler, ISqlWrite
                             continue;
                         }
                     }
+                    else if (element.Value is IDictionary<string, JsonShortDescription> ofivdic
+                                && item.Value.Value is ICollection<JsonShortDescription> ofevdic)
+                    {
+                        if (ofevdic.FirstOrDefault().Value is IDictionary<string, JsonShortDescription> js)
+                        {
+                            var keys = js.Select(x => x.Key).ToArray();
+                            if (ofivdic.Keys.SequenceEqual(keys))
+                            {
+                                if (grouped.Any(x => x.Value.Contains(item.Key) || x.Value.Contains(key)))
+                                {
+                                    _logger.LogTrace($"Found [white]{item.Key}[/] values to be possibly a table, matching existing values [white]{JsonSerializer.Serialize(grouped.Values, _traceSerializer).EscapeMarkup()}[/]");
+                                    var k = grouped.FirstOrDefault(x => x.Value.Contains(item.Key) || x.Value.Contains(key)).Key;
+                                    grouped[k].Add(item.Key);
+                                }
+                                else
+                                {
+                                    _logger.LogTrace($"Found [white]{item.Key}[/] values to be possibly a table");
+                                    grouped[index] = [item.Key];
+                                }
+                                continue;
+                            }
+                        }
+                    }
                 }
             }
         }
-        var singles = set.Where(x => x.Value.Value != null && !grouped.SelectMany(x => x.Value).Contains(x.Key));
+        var singles = set.Where(x => x.Value.Value != null && !grouped.SelectMany(x => x.Value).Contains(x.Key)).ToArray();
         var result = grouped.Select(x => x.Value.ToArray()).Distinct().ToArray().Concat(singles.Select(x => (string[])[x.Key])).ToArray().ToArray();
         var found = result.SelectMany(x => x).ToArray();
         _logger.LogTrace($"Found {found.Length} table candidates: [white]{JsonSerializer.Serialize(found, _traceSerializer).EscapeMarkup()}[/]");
