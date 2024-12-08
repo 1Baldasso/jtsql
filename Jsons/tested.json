@@ -1,0 +1,22 @@
+{
+  "teste": "abcdefghij",
+  "data": "2020-01-01",
+  "idade": 25,
+  "profissao": "programador",
+  "salario": 1000.2,
+  "objeto": {
+    "nome": "João",
+    "sobrenome": "Silva",
+    "idade": 30
+  },
+  "pessoa": {
+    "nome": "João",
+    "sobrenome": "Silva",
+    "idade": 30
+  },
+  "salada": {
+    "name": "salada",
+    "tested": []
+  },
+  "mn": [{ "olho": 15, "tested": [] }]
+}

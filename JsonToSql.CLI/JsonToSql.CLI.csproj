@@ -7,6 +7,8 @@
     <Nullable>enable</Nullable>
     <AssemblyName>jtsql</AssemblyName>
     <RootNamespace>jtsql</RootNamespace>
+    <Title>JtSQL</Title>
+    <RepositoryUrl>https://github.com/1baldasso/jsontosql</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

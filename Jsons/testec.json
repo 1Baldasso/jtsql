@@ -1,0 +1,23 @@
+{
+  "cargo": "programador",
+  "data_inicio": "2020-01-01",
+  "tempo_de_casa": 25,
+  "salario": 1000.2,
+  "pessoa": {
+    "nome": "João",
+    "sobrenome": "Silva",
+    "idade": 30
+  },
+  "filho": [
+    {
+      "nome": "Maria",
+      "sobrenome": "Silva",
+      "idade": 25
+    },
+    {
+      "nome": "José",
+      "sobrenome": "Silva",
+      "idade": 30
+    }
+  ]
+}

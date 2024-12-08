@@ -3,14 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonToSql.CLI", "JsonToSql.CLI\JsonToSql.CLI.csproj", "{1E628355-DD1A-4252-8066-E53A469196AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonToSql.CLI", "JsonToSql.CLI\JsonToSql.CLI.csproj", "{1E628355-DD1A-4252-8066-E53A469196AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{5E452797-9BB7-471B-B0D1-93EB94DFF160}"
+	ProjectSection(SolutionItems) = preProject
+		Jsons\testea.json = Jsons\testea.json
+		Jsons\testeb.json = Jsons\testeb.json
+		Jsons\testec.json = Jsons\testec.json
+		Jsons\tested.json = Jsons\tested.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		All|Any CPU = All|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E628355-DD1A-4252-8066-E53A469196AF}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{1E628355-DD1A-4252-8066-E53A469196AF}.All|Any CPU.Build.0 = Release|Any CPU
 		{1E628355-DD1A-4252-8066-E53A469196AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1E628355-DD1A-4252-8066-E53A469196AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E628355-DD1A-4252-8066-E53A469196AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
